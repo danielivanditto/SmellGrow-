@@ -8,6 +8,9 @@ public class CombineCollectItems : MonoBehaviour
     public int objectCombineAmount;
     public NewObject obj;
 
+    private static int GLOBAL_ITEM_ID = 0;
+    private int localItemId;
+
     [Space][Header("Prefabs and Objects")]
     [SerializeField] private TextMeshPro instanceText;
     [SerializeField] public TextMeshPro currentText;
@@ -15,6 +18,12 @@ public class CombineCollectItems : MonoBehaviour
 
     [Space][Header("Animations")]
     [SerializeField] private Animator anim;
+
+    void Awake()
+    {
+        localItemId = GLOBAL_ITEM_ID;
+        GLOBAL_ITEM_ID++;
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -34,7 +43,7 @@ public class CombineCollectItems : MonoBehaviour
 
     private void CombineItemsTogether(Collision2D other)
     {
-        if (objectCombineAmount > other.gameObject.GetComponent<CombineCollectItems>().objectCombineAmount || transform.GetSiblingIndex() > other.gameObject.transform.GetSiblingIndex() && objectCombineAmount == other.gameObject.GetComponent<CombineCollectItems>().objectCombineAmount)
+        if (objectCombineAmount > other.gameObject.GetComponent<CombineCollectItems>().objectCombineAmount || localItemId > other.gameObject.GetComponent<CombineCollectItems>().localItemId && objectCombineAmount == other.gameObject.GetComponent<CombineCollectItems>().objectCombineAmount)
         {
             if (other.gameObject.GetComponent<CombineCollectItems>().currentText != null)
                 Destroy(other.gameObject.GetComponent<CombineCollectItems>().currentText.gameObject);
