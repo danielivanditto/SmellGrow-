@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         resetJumpsTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && currentMultiJumpCount < attributes.multiJumpCount && playerStamina.CheckForAvalablePoints())
+        if (Input.GetKeyDown(KeyCode.Space) && currentMultiJumpCount < attributes.multiJumpCount && playerStamina.CheckForAvailablePoints())
         {
             rb.linearVelocityY = attributes.jumpPower;
             resetJumpsTimer = attributes.jumpPower / 10;

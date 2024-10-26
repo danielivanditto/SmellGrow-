@@ -18,7 +18,7 @@ public class DragObject : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     [Space][Header("Other GameObjects")]
     [SerializeField] private RectTransform canvas;
-    [SerializeField] private PlayerInventroy inventory;
+    [SerializeField] private PlayerInventory inventory;
 
     [Space][Header("Components")]
     [SerializeField] private Rigidbody2D rb;
