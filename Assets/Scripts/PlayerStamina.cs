@@ -18,7 +18,7 @@ public class PlayerStamina : MonoBehaviour
     [SerializeField] private GameObject staminaPoint;
 
     [Header("Variables")]
-    [SerializeField] private float currentTimer; // for the RegainStamia, this timer is like the WaitForSeconds()
+    [SerializeField] private float currentTimer; // for RegainStamina, this timer is like WaitForSeconds()
 
     private void Start()
     {
@@ -89,7 +89,7 @@ public class PlayerStamina : MonoBehaviour
         }
     }
 
-    public bool CheckForAvalablePoints()
+    public bool CheckForAvailablePoints()
     {
         for (int i = 0; i < staminaLayout.childCount - 1; i++)
         {

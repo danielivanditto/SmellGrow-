@@ -35,7 +35,7 @@ public class CombineCollectItems : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerInventroy>())
+        if (other.gameObject.GetComponent<PlayerInventory>())
         {
             CollectItem(other);
         }
@@ -67,8 +67,8 @@ public class CombineCollectItems : MonoBehaviour
 
     private void CollectItem(Collider2D other)
     {
-        other.gameObject.GetComponent<PlayerInventroy>().AddItem(obj, objectCombineAmount);
-        other.gameObject.GetComponent<PlayerInventroy>().UpdateInventoryItemCount(uiTextCount, obj);
+        other.gameObject.GetComponent<PlayerInventory>().AddItem(obj, objectCombineAmount);
+        other.gameObject.GetComponent<PlayerInventory>().UpdateInventoryItemCount(uiTextCount, obj);
 
         StartCoroutine(DestroyWait(1));
     }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
-public class PlayerInventroy : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
     struct Item
     {
@@ -67,7 +67,7 @@ public class PlayerInventroy : MonoBehaviour
             }
         }
 
-        Debug.Log("The play doesn't have that inventory item, which means you can't delete it");
+        Debug.Log("The player doesn't have that inventory item, which means you can't delete it");
     }
 
     public void UpdateInventoryItemCount(TextMeshProUGUI itemCount, NewObject obj)
